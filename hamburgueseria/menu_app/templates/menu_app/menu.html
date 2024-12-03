@@ -11,6 +11,9 @@
         {% for hamburguesa in hamburguesas %}
         <li>
             <h2>{{ hamburguesa.nombre }}</h2>
+            {% if hamburguesa.imagen %}
+                <img src="{{ hamburguesa.imagen.url }}" alt="{{ hamburguesa.nombre }}" style="width: 200px; height: auto;">
+            {% endif %}
             <p>{{ hamburguesa.descripcion }}</p>
             <p>Precio: ${{ hamburguesa.precio }}</p>
         </li>
@@ -18,3 +21,4 @@
     </ul>
 </body>
 </html>
+
