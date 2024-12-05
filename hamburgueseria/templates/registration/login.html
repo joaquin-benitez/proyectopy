@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realizar Pedido</title>
+    <title>Login</title>
 </head>
 <body>
-    <h1>Realizar Pedido</h1>
+    <h1>Iniciar Sesión</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Enviar Pedido</button>
+        <button type="submit">Login</button>
     </form>
 </body>
 </html>

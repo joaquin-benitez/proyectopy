@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import realizar_pedido
+from . import views
 
 urlpatterns = [
-    path('realizar/', realizar_pedido, name='realizar_pedido'),
+    path('realizar/', views.realizar_pedido, name='realizar_pedido'),
+    path('pedido-completado/', views.pedido_completado, name='pedido_completado'),
 ]
-

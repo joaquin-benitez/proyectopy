@@ -1,12 +1,20 @@
 from django.shortcuts import render, redirect
 from .forms import PedidoForm
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def realizar_pedido(request):
     if request.method == 'POST':
         form = PedidoForm(request.POST)
         if form.is_valid():
-            form.save()
-            return render(request, 'pedidos/confirmacion.html')  # Página de confirmación
+            pedido = form.save(commit=False)
+            pedido.usuario = request.user  
+            pedido.save()
+            return redirect('pedido_completado')  
     else:
         form = PedidoForm()
-    return render(request, 'pedidos/pedido.html', {'form': form})
+    
+    return render(request, 'pedidos/realizar_pedido.html', {'form': form})
+
+def pedido_completado(request):
+    return render(request, 'pedidos/pedido_completado.html')
