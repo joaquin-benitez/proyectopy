@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import PedidoForm
 from django.contrib.auth.decorators import login_required
+from .models import Pedido
 
 @login_required
 def realizar_pedido(request):
@@ -18,3 +19,7 @@ def realizar_pedido(request):
 
 def pedido_completado(request):
     return render(request, 'pedidos/pedido_completado.html')
+
+def lista_pedidos(request):
+    pedidos = Pedido.objects.all()  
+    return render(request, 'pedidos/lista_pedidos.html', {'pedidos': pedidos})
