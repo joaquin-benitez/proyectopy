@@ -1,7 +1,7 @@
 Proyecto: Sistema de Gestión para Hamburguesería
-
+==========================
 Descripción General
-
+==========================
 Este proyecto es un sistema web desarrollado en Django para la gestión de pedidos y administración de una hamburguesería. El sistema permite a los usuarios realizar pedidos, ver el estado de órdenes, y gestionar el menú y las operaciones de la hamburguesería de manera eficiente.
 
 Caracteristicas Principales
