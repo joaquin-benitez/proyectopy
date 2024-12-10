@@ -8,19 +8,21 @@ Caracteristicas Principales
 ==========================
 Gestor de pedidos
 ==========================
-*Permite a los usuarios realizar pedidos
-*ofrece una vista de los pedidos realizados
+Permite a los usuarios realizar pedidos
+ofrece una vista de los pedidos realizados
+
 Administracion del Menu
 ==========================
-*Gestiona los elementos de menu
-*Permite agregar, editar y eliminar elementos del menu
-Sistema de Login/logout
+Gestiona los elementos de menu
+Permite agregar, editar y eliminar elementos del menu
+
+login/loguot
 ==========================
-*Permite a los usuarios iniciar sesión y cerrar sesión
-*superuser admin pass: admin
+Permite a los usuarios iniciar sesión y cerrar sesión
+superuser admin pass: admin
 
 Tecnologías Utilizadas
 ==========================
-*Backend: Django (Python)
-*Frontend: HTML, CSS, Bootstrap // en proceso
-*Base de Datos: SQLite
+Backend: Django (Python)
+Frontend: HTML, CSS, Bootstrap // en proceso
+Base de Datos: SQLite
