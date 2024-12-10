@@ -5,17 +5,23 @@
 {% endblock %}
 
 {% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Menú de Hamburguesas</h1>
+    <div class="row">
         {% for hamburguesa in hamburguesas %}
-        <li>
-            <h2>{{ hamburguesa.nombre }}</h2>
-            {% if hamburguesa.imagen %}
-                <img src="{{ hamburguesa.imagen.url }}" alt="{{ hamburguesa.nombre }}" style="width: 200px; height: auto;">
-            {% endif %}
-            <p>{{ hamburguesa.descripcion }}</p>
-            <p>Precio: ${{ hamburguesa.precio }}</p>
-        </li>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                {% if hamburguesa.imagen %}
+                <img src="{{ hamburguesa.imagen.url }}" class="card-img-top" alt="{{ hamburguesa.nombre }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ hamburguesa.nombre }}</h5>
+                    <p class="card-text">{{ hamburguesa.descripcion }}</p>
+                    <p class="card-text"><strong>Precio:</strong> ${{ hamburguesa.precio }}</p>
+                </div>
+            </div>
+        </div>
         {% endfor %}
-    </ul>
-
+    </div>
+</div>
 {% endblock %}
-
