@@ -14,6 +14,7 @@ Administracion del Menu
 *Permite agregar, editar y eliminar elementos del menu
 Sistema de Login/logout
 *Permite a los usuarios iniciar sesión y cerrar sesión
+*superuser admin pass: admin
 
 Tecnologías Utilizadas
 *Backend: Django (Python)

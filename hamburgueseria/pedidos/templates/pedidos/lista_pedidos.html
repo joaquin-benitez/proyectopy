@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Pedidos</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
     <h1>Lista de Pedidos</h1>
-    <table>
+{% endblock %}
+
+{% block content %}
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Usuario</th>
                 <th>Fecha del Pedido</th>
-                <th>Total</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -22,10 +20,10 @@
                     <td>{{ pedido.id }}</td>
                     <td>{{ pedido.usuario.username }}</td>  
                     <td>{{ pedido.fecha_pedido }}</td>
-                    <td>{{ pedido.total }}</td>  
+                    
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+
+{% endblock %}
