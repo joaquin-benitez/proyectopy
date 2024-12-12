@@ -20,6 +20,7 @@ login/loguot
 ==========================
 Permite a los usuarios iniciar sesión y cerrar sesión
 superuser admin pass: admin
+- usuario1 pass user1234, con menos permisos.
 
 Tecnologías Utilizadas
 ==========================

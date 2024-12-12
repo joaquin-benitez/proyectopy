@@ -1,13 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido Completado</title>
-</head>
-<body>
-    <h1>¡Gracias por tu pedido!</h1>
-    <p>Tu pedido ha sido realizado con éxito.</p>
-    <a href="{% url 'menu' %}">Volver al menú</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="text-center">
+      <h2 class="mb-4">¡Gracias por tu pedido!</h2>
+      <p class="mb-4">Tu pedido ha sido realizado con éxito.</p>
+      <a href="{% url 'menu' %}" class="btn btn-warning">Volver al menú</a>
+    </div>
+  </div>
+
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: #f4f4f4;
+    }
+    h2 {
+      color: #f8b400;
+    }
+    .btn {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #f8b400;
+      color: #000;
+      transform: scale(1.05);
+    }
+    .text-center {
+      background-color: #2d2d2d;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+{% endblock %}

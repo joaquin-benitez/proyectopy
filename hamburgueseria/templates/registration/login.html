@@ -1,16 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <h1>Iniciar Sesión</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Iniciar Sesión</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card p-4 shadow">
+          <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-warning w-100 mt-3">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: #f4f4f4;
+    }
+    h2 {
+      color: #f8b400;
+    }
+    .card {
+      background-color: #2d2d2d;
+      border: none;
+      border-radius: 10px;
+    }
+    .card form {
+      color: #ddd;
+    }
+    .card form input, .card form select, .card form textarea {
+      background-color: #333;
+      border: 1px solid #444;
+      color: #f4f4f4;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    .card form input:focus, .card form select:focus, .card form textarea:focus {
+      outline: none;
+      border-color: #f8b400;
+      box-shadow: 0 0 5px rgba(248, 180, 0, 0.8);
+    }
+    button {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background-color: #f8b400;
+      transform: scale(1.05);
+    }
+  </style>
+{% endblock %}
