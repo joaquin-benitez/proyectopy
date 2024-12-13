@@ -28,6 +28,7 @@ urlpatterns = [
     path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('pedidos/lista/', views.lista_pedidos, name='lista_pedidos'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]
 
 if settings.DEBUG:
