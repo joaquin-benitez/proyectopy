@@ -21,5 +21,10 @@ def pedido_completado(request):
     return render(request, 'pedidos/pedido_completado.html')
 
 def lista_pedidos(request):
-    pedidos = Pedido.objects.all()  
-    return render(request, 'pedidos/lista_pedidos.html', {'pedidos': pedidos})
+    query = request.GET.get('usuario', '')
+    if query:
+        pedidos = Pedido.objects.filter(usuario__username__icontains=query)
+    else:
+        pedidos = Pedido.objects.all()
+    
+    return render(request, 'pedidos/lista_pedidos.html', {'pedidos': pedidos, 'query': query})
