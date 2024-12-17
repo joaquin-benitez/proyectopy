@@ -1,23 +1,119 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
-<div class="container mt-4">
+
+<style>
+  body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #333333; /* Fondo oscuro para el body */
+      color: #ddd;
+      margin-bottom: 60px;
+  }
+
+  /* Estilo del Navbar */
+  nav {
+      background-color: #2d2d2d;
+  }
+
+  nav .navbar-brand {
+      color: #f8b400;
+      font-weight: 500;
+  }
+
+  nav .navbar-nav .nav-link {
+      color: #ddd;
+      font-weight: 400;
+  }
+
+  nav .navbar-nav .nav-link:hover {
+      color: #f8b400;
+      transition: color 0.3s ease;
+  }
+
+  /* Estilos de la tabla */
+  .table {
+      background-color: #adadad;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+  }
+
+  .table-row {
+      transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .table-row:hover {
+      background-color: #999999; /* Hover de la fila */
+      transform: scale(1.02);
+  }
+
+  .table th {
+      background-color: #2d2d2d;
+      color: #f8b400;
+      font-weight: 500;
+  }
+
+  /* Barra de búsqueda */
+  .input-group input {
+      background-color: #555;
+      color: #fff;
+      border: 2px solid #f8b400;
+      border-radius: 5px 0 0 5px;
+  }
+
+  .input-group input:focus {
+      background-color: #444;
+      color: #fff;
+      border-color: #f8b400;
+  }
+
+  .input-group button {
+      background-color: #f8b400;
+      color: #333;
+      border-radius: 0 5px 5px 0;
+      transition: background-color 0.3s ease;
+  }
+
+  .input-group button:hover {
+      background-color: #e67e00; /* Efecto hover en el botón */
+  }
+
+  /* Mensaje de error */
+  .text-danger {
+      font-size: 1.2rem;
+  }
+
+  footer {
+      background-color: #2d2d2d;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+
+<div class="container mt-5">
     <!-- Título de la Página -->
-    <h2 class="text-center mb-4 text-uppercase fw-bold" style="color: #2d2d2d;">Lista de Pedidos</h2>
+    <h2 class="text-center mb-5 text-uppercase fw-bold" style="color: #f8b400;">Lista de Pedidos</h2>
 
     <!-- Barra de Búsqueda -->
     <div class="row justify-content-center mb-4">
         <div class="col-md-6">
             <form method="get" action="" class="input-group">
-                <input type="text" name="usuario" class="form-control" placeholder="Buscar por usuario..." value="{{ query }}">
-                <button type="submit" class="btn btn-warning text-dark fw-bold">Buscar</button>
+                <input type="text" name="usuario" class="form-control border-0 shadow-sm" placeholder="Buscar por usuario..." value="{{ query }}">
+                <button type="submit" class="btn btn-warning text-dark fw-bold shadow-sm">Buscar</button>
             </form>
         </div>
     </div>
 
     <!-- Tabla de Pedidos -->
     <div class="table-responsive">
-        <table class="table table-hover table-striped align-middle">
+        <table class="table table-hover table-bordered align-middle">
             <thead class="table-dark text-center">
                 <tr>
                     <th>ID</th>
@@ -29,7 +125,7 @@
             </thead>
             <tbody class="text-center">
                 {% for pedido in pedidos %}
-                <tr>
+                <tr class="table-row">
                     <td>{{ pedido.id }}</td>
                     <td>{{ pedido.usuario.username }}</td>
                     <td>{{ pedido.hamburguesa }}</td>
@@ -45,5 +141,7 @@
         </table>
     </div>
 </div>
+
 {% endblock %}
+
 
