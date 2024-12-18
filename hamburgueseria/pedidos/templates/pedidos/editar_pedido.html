@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+  body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #333333; /* Fondo oscuro para el body */
+      color: #ddd;
+      margin-bottom: 60px;
+  }
+
+  /* Estilo del formulario */
+  .form-container {
+      background-color: #303030;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      margin: 0 auto;
+  }
+
+  .form-container h1 {
+      color: #f8b400;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .form-group label {
+      color: #ddd;
+      font-weight: bold;
+  }
+
+  .form-control {
+      background-color: #383838;
+      color: #fff;
+      border: 2px solid #f8b400;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      width: 100%;
+      padding: 10px;
+  }
+
+  .form-control:focus {
+      background-color: #444;
+      border-color: #f8b400;
+  }
+
+  .btn-submit {
+      background-color: #f8b400;
+      color: #333;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+  }
+
+  .btn-submit:hover {
+      background-color: #e67e00;
+  }
+</style>
+
+<div class="container mt-5">
+    <div class="form-container">
+        <h1>Editar Pedido</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="usuario">Usuario</label>
+                {{ form.usuario }}
+            </div>
+
+            <div class="form-group">
+                <label for="hamburguesa">Hamburguesa</label>
+                {{ form.hamburguesa }}
+            </div>
+
+            <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                {{ form.cantidad }}
+            </div>
+
+            <button type="submit" class="btn-submit">Guardar cambios</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+
